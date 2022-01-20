@@ -1,6 +1,6 @@
 import myApi from './api/Api';
 import { useEffect, useState } from "react";
-import axios from "axios";
+
 
 function App() {
    const [data, setData] = useState([]);
@@ -38,8 +38,8 @@ function App() {
   return (
     <div >
       {' '}
-      Bank Application!
-      <button onClick={() => setIsClicked(true)}>get</button>
+      <h1>Bank Application</h1>
+      <button onClick={() => setIsClicked(true)}>Get all users</button>
       {isClicked && print()}
     </div>
   );
