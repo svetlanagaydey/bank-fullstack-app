@@ -25,8 +25,8 @@ function App() {
           return (
             <li key={index}>
               <p className={user.id}>id: {user.id}</p>
-              <p className="balance">credit: {user.cash}</p>
-              <p className="credit">cash: {user.credit}</p>
+              <p className="Balance">credit: {user.cash}</p>
+              <p className="Credit">cash: {user.credit}</p>
               <hr />
             </li>
           );
