@@ -4,5 +4,62 @@
     font-family: 'arial';
     font-size: 4vmin;
     padding: 20px 0;
-    color:  rgb(23, 65, 103);
 }
+.clients-list {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.client {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px dotted rgb(21, 46, 82);
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 2vmin;
+    padding: 0 50px;
+}
+.info-block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    grid-template-areas:
+        "id id"
+        "cash credit";
+    flex-grow: 2;
+}
+.client {
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+}
+.client-icon {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    background-image: url(../../../Assets/Images/investor.png);
+    background-repeat: no-repeat;
+    flex-grow: 1;
+}
+.credit,
+.cash,
+.id {
+    background-color: rgb(252, 232, 205);
+    border-radius: 4px;
+    padding: 6px 0 6px 30px;
+    display: inline-block;
+    font-size: 3vmin;
+    line-height: 1;
+}
+.credit {
+    grid-area: credit;
+}
+.cash {
+    grid-area: cash;
+}
+.id {
+    grid-area: id;
+}
+

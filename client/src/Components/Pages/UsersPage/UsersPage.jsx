@@ -18,14 +18,16 @@ const UsersPage = () => {
 	const print = () => {
 		console.log(data)
 		return (
-			<ul>
+			<ul className="clients-list">
 				{data.map((user, index) => {
 					return (
-						<li key={index}>
-							<p className={user.id}>id: {user.id}</p>
-							<p className="Balance">credit: {user.cash}</p>
-							<p className="Credit">cash: {user.credit}</p>
-							<hr />
+						<li className="client" key={index}>
+							<span className="client-icon"></span>
+							<div className="info-block">
+								<p className="id">id: {user._id}</p>
+								<p className="credit">credit: {user.cash}</p>
+								<p className="cash">cash: {user.credit}</p>
+							</div>
 						</li>
 					);
 				})}
