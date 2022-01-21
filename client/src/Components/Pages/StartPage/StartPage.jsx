@@ -1,6 +1,6 @@
-import myApi from '../../api/Api';
+import myApi from '../../../api/Api';
 import { useEffect, useState } from "react";
-import Header from '../Header/Header'
+import Header from '../../Header/Header'
 
 const StartPage = () => {
 	const [data, setData] = useState([]);
