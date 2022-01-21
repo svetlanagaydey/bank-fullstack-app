@@ -1,0 +1,51 @@
+.main {
+    margin-top: 7vmin;
+}
+.main-header {
+    text-align: center;
+    margin-bottom: 7vmin;
+}
+.options-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.option {
+    width:42%;
+    min-height: 8vmin;
+    line-height: 8vmin;
+    margin-bottom: 5vmin ;
+    font-size: 4vmin;
+    border: 2px solid rgb(238, 192, 92);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.option:hover {
+    cursor: pointer;
+    background-color: rgb(238, 192, 92);
+}
+.icon {
+    display: -block;
+    width: 100px;
+    height: 100px;
+    margin-right: 2vmin;
+    background-repeat: no-repeat;
+    margin: 2vmin;
+}
+.icon1 {
+    background-image: url(../../../Assets/Images/recruitment.png);
+}
+.icon2 {
+    background-image: url(../../../Assets/Images/resume.png);
+}
+.icon3 {
+    background-image: url(../../../Assets/Images/consultation.png);
+}
+.icon4 {
+    background-image: url(../../../Assets/Images/team.png);
+}
+.option-text {
+height: 100%;
+vertical-align: center;
+}

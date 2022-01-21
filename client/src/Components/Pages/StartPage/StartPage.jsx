@@ -1,47 +1,21 @@
-import myApi from '../../../api/Api';
-import { useEffect, useState } from "react";
-import Header from '../../Header/Header'
+import {Link} from 'react-router-dom';
+import Header from '../../Header/Header';
+import './startPage.css'
 
 const StartPage = () => {
-	const [data, setData] = useState([]);
-	// const [isAddUser, setIsAddUser] = useState(false);
-	const [isClicked, setIsClicked] = useState(false);
 
-	useEffect(() => {
-		getReq()
-	}, [isClicked]);
-	//console.log(process.env.NODE_ENV);
-
-	const getReq = async () => {
-		const { data } = await myApi.get('/users');
-		setData(data.users);
-	};
-  
-	const print = () => {
-		console.log(data)
-		return (
-			<ul>
-				{data.map((user, index) => {
-					return (
-						<li key={index}>
-							<p className={user.id}>id: {user.id}</p>
-							<p className="Balance">credit: {user.cash}</p>
-							<p className="Credit">cash: {user.credit}</p>
-							<hr />
-						</li>
-					);
-				})}
-			</ul>
-		);
-	}
 	return (
-		<div >
-            <Header />
-            <h1>Wellcome to my bank application!</h1>
-			{' '}
-			<h1>Bank Application</h1>
-			<button onClick={() => setIsClicked(true)}>Get all users</button>
-			{isClicked && print()}
+		<div className="container">
+      <Header />
+			<main className="main">
+        <h1 className="main-header">Wellcome to my bank application!</h1>
+        <ul className="options-list">
+          <li className="option"> <span className="icon icon1"></span><Link clas="option-text" to="/user" value='user' data-hover="HTML">Find Client</Link></li>
+          <li className="option"> <span className="icon icon2"></span><Link clas="option-text" to="/add" value='add' data-hover="CSS">Add New Client</Link></li>
+          <li className="option"> <span className="icon icon3"></span><Link clas="option-text" to="/transfer"value='transfer' data-hover="transfer">Transfer</Link></li>
+          <li className="option"> <span className="icon icon4"></span><Link clas="option-text" to="/users" value='users' data-hover="users">Get All Users</Link></li>
+        </ul>
+			</main> 
 		</div>
 	);  
 }
