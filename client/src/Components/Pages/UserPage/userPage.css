@@ -10,3 +10,77 @@
     width: 100%;
     margin: auto;
 }
+.userOptions {
+   margin: auto;
+    width: 80%;
+}
+.user-header {
+    font-size: 4vmin;
+}
+.searching-bloc {
+    text-align: center;
+    margin: 4vmin 0;
+}
+.searching-bloc input,
+.searching-bloc button {
+    display: inline-block;
+    padding: 30px;
+    font-size: 2vmin;
+    border-radius: 10px;
+}
+.searching-bloc button {
+    border: 3px solid  rgb(23, 65, 103);
+    color: white;
+    background:  rgb(23, 65, 103);
+    margin-left: 40px;
+    font-size: 3vmin;
+}
+.searching-bloc input {
+    border: 3px dotted rgb(23, 65, 103);
+    font-size: 3vmin;
+    width: 40%;
+    color:  rgb(23, 65, 103);
+    background-color: rgb(100, 213, 238);
+    cursor: pointer;
+}
+.searching-bloc input:hover,
+.searching-bloc input:focus {
+    border: 3px solid rgb(245, 200, 51);
+    outline: 3px solid  rgb(245, 200, 51);
+}
+.userOption {
+    min-height: 8vmin;
+    line-height: 8vmin;
+    border-radius: 10%;
+    width: 20%;
+    border: 3px dotted rgb(245, 200, 51);
+    text-align: center;
+    font-size: 4vmin;
+    font-weight: 600;
+}
+.userOption .icon {
+    display: block;
+    margin: auto;
+    width: 150px;
+    height: 150px;
+    margin-right: 2vmin;
+    background-repeat: no-repeat;
+    margin: 2vmin auto;
+}
+.depositIcon {
+    background-image: url('../../../Assets/Images/invoice.png');
+}
+.withdrawIcon {
+    background-image: url('../../../Assets/Images/thunderbolt.png');
+}
+.updateNameIcon {
+    background-image: url('../../../Assets/Images/management.png');
+}
+.deleteIcon {
+    background-image: url('../../../Assets/Images/scissors.png');
+}
+.delete {
+    border: 3px dotted red;
+
+}
+
