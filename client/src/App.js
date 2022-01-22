@@ -1,25 +1,26 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StartPage from './Components/Pages/StartPage/StartPage';
 import UserPage from './Components/Pages/UserPage/UserPage';
 import UsersPage from './Components/Pages/UsersPage/UsersPage';
 import TransferPage from './Components/Pages/TransferPage/TransferPage';
 import AddUser from './Components/Pages/AddUser/AddUser';
-// import myApi from './api/Api';
-// import { useEffect, useState } from "react";
-
 
 function App() {
   return (
-    <BrowserRouter >
+    
+    <Router >
       <div>
-          <Route path="/" exact component={StartPage}/>
-          <Route path="/user" component={UserPage}/>
-          <Route path="/users" component={UsersPage}/>
-          <Route path="/transfer" component={TransferPage}/>
-          <Route path="/add" component={AddUser}/>
+        <Routes> 
+            <Route path="/" exact element={<StartPage/>}/>
+            <Route path="/user" element={<UserPage/>}/>
+            <Route path="/users" element={<UsersPage/>}/>
+            <Route path="/transfer" element={<TransferPage/>}/>
+            <Route path="/add" element={<AddUser/>}/>
+        </Routes> 
       </div>
-  </BrowserRouter>
+    </Router>
+  
   )
 }
 export default App;
