@@ -1,8 +1,11 @@
 {
   "name": "bank_mongo_react",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "my first fulstack app",
+  "main": "app.js",
+  "engines": {
+    "node": "14.17.4"
+  },
   "scripts": {
     "start": "node app.js",
     "server": "nodemon app.js",
