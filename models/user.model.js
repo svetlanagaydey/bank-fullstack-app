@@ -2,6 +2,12 @@ const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
   {
+    firstName: {
+      type: String
+    },
+    lastName: {
+      type:String
+    },
     cash: {
       type: Number,
       default: 0,

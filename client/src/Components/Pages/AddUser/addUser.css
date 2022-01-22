@@ -6,3 +6,44 @@
     padding: 20px 0;
     color:  rgb(23, 65, 103);
 }
+.successMesage {
+    text-align: center;
+}
+.form {
+    margin: auto;
+    width: 40%;
+    padding: 50px;
+    border: 1px solid rgb(245, 198, 46);
+}
+.form-field {
+    margin-bottom: 30px;
+}
+.form-field label {
+    font-size: 2.5vmin;
+    color: rgb(23, 65, 103);
+}
+.form-field input {
+    font-size: 2.5vmin;
+    width: 300px;
+    font-family: 'Rajdhani';
+    padding: 0 10px;
+    margin-left: 30px;
+    border: 1px dotted rgb(23, 65, 103);
+    border-radius: 10px;
+    color: rgb(23, 65, 103);
+}
+.addButton {
+    width: 50%;
+    height: 60px;
+    font-size: 2.5vmin;
+    color: rgb(244, 224, 160);
+    color: white;
+    background: rgb(30, 74, 115);
+    border-radius: 10px;
+    border: 1px solid transparent;
+}
+.addButton:hover {
+    border: 1px solid rgb(30, 74, 115);
+    color: rgb(30, 74, 115); 
+    background: rgb(244, 224, 160);
+}

@@ -26,6 +26,7 @@
     grid-auto-rows: minmax(100px, auto);
     grid-gap: 10px;
     grid-template-areas:
+        "firstName lastName"
         "id id"
         "cash credit";
     flex-grow: 2;
@@ -43,15 +44,24 @@
     background-repeat: no-repeat;
     flex-grow: 1;
 }
+.firstName,
+.lastName,
 .credit,
 .cash,
 .id {
-    background-color: rgb(252, 232, 205);
+    background-color: rgb(245, 230, 192);
     border-radius: 4px;
-    padding: 6px 0 6px 30px;
+    padding: 16px 0 16px 30px;
     display: inline-block;
     font-size: 3vmin;
     line-height: 1;
+    font-weight: 600;
+}
+.firstName {
+    grid-area: firstName;
+}
+.lastName {
+    grid-area: lastName;
 }
 .credit {
     grid-area: credit;
@@ -61,5 +71,9 @@
 }
 .id {
     grid-area: id;
+}
+.formSubtitles {
+    color: rgb(133, 145, 170);
+    font-weight: 400;
 }
 

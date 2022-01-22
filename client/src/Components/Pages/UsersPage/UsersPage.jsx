@@ -5,7 +5,8 @@ import myApi from '../../../api/Api'
 import './usersPage.css';
 
 const UsersPage = () => {
-    const [data, setData] = useState([]);
+
+  const [data, setData] = useState([]);
 	useEffect(() => {
 		getReq()
 	}, []);
@@ -24,9 +25,11 @@ const UsersPage = () => {
 						<li className="client" key={index}>
 							<span className="client-icon"></span>
 							<div className="info-block">
-								<p className="id">id: {user._id}</p>
-								<p className="credit">credit: {user.cash}</p>
-								<p className="cash">cash: {user.credit}</p>
+                <p className="firstName"><span className="formSubtitles">First Name: </span>{user.firstName}</p>
+                <p className="lastName"><span className="formSubtitles">Last Name: </span>{user.lastName}</p>
+								<p className="id"><span className="formSubtitles">id: </span>{user._id}</p>
+								<p className="credit"><span className="formSubtitles">credit: </span>{user.cash}</p>
+								<p className="cash"><span className="formSubtitles">cash: </span>{user.credit}</p>
 							</div>
 						</li>
 					);
