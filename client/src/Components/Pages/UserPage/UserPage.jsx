@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../../Components/Header/Header';
 import './userPage.css';
 import { useState, useEffect } from "react";
+import {Link} from 'react-router-dom';
 import myApi from '../../../api/Api';
 
 const UserPage = () => {
@@ -18,13 +19,17 @@ const UserPage = () => {
       } catch (e) {
         setIsUser(false);
         setCarrentUser("");
-        console.log("catch")
         //console.log(e);
       }
     }
     useEffect(() => {
         inputRef.current.focus();
     },[currentUser]);
+
+    const setUserToLocal = () => {
+      localStorage.setItem('userToDelete', JSON.stringify(currentUser));
+      //console.log(currentUser.user);
+    }
 
     const printUserInfo = () => {
         return (
@@ -43,7 +48,7 @@ const UserPage = () => {
               <li className="userOption deposit"> <span className="icon depositIcon"></span>Deposit</li>
               <li className="userOption withdraw"> <span className="icon withdrawIcon"></span>Withdraw</li>
               <li className="userOption updateName"> <span className="icon updateNameIcon"></span>Update</li>
-              <li className="userOption delete"> <span className="icon deleteIcon"></span>Delete</li>
+              <li className="userOption delete" onClick={setUserToLocal()}> <Link to="/delete"> <span className="icon deleteIcon"> </span> Delete </Link> </li>
             </ul>
           </div>
         )
@@ -68,5 +73,4 @@ const UserPage = () => {
         </div>
     )
 }
-
 export default UserPage;

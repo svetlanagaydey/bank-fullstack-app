@@ -35,5 +35,6 @@ code {
   max-width: 1600px;
   min-height: 80vh;
   margin: auto;
+  text-align: center;
   background: rgba(249, 248, 248, 0.899);
 }

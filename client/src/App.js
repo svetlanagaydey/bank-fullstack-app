@@ -5,10 +5,10 @@ import UserPage from './Components/Pages/UserPage/UserPage';
 import UsersPage from './Components/Pages/UsersPage/UsersPage';
 import TransferPage from './Components/Pages/TransferPage/TransferPage';
 import AddUser from './Components/Pages/AddUser/AddUser';
+import DeleteUser from './Components/Pages/DeleteUser/DeleteUser';
 
 function App() {
   return (
-    
     <Router >
       <div>
         <Routes> 
@@ -17,6 +17,7 @@ function App() {
             <Route path="/users" element={<UsersPage/>}/>
             <Route path="/transfer" element={<TransferPage/>}/>
             <Route path="/add" element={<AddUser/>}/>
+            <Route path="/delete" element={<DeleteUser/>}/>
         </Routes> 
       </div>
     </Router>
