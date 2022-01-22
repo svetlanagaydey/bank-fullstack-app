@@ -6,19 +6,21 @@ import myApi from '../../../api/Api';
 
 const UserPage = () => {
     const [searchingId, setSearchingId] = useState("");
-    const [currentUser, setCarrentUser] = useState();
+    const [currentUser, setCarrentUser] = useState("");
+    const [isUser, setIsUser] = useState(true);
     const inputRef = React.createRef();
 
     const findUser = async() => {
-        console.log("yes");
-        try {
-            const { data } = await myApi.get(`/users/${searchingId}`);
-            setCarrentUser(data);
-            console.log(data)
-        } catch (e) {
-            console.log(e);
-        }
-        
+      try {
+        const { data } = await myApi.get(`/users/${searchingId}`);
+        setCarrentUser(data); 
+        setIsUser(true);
+      } catch (e) {
+        setIsUser(false);
+        setCarrentUser("");
+        console.log("catch")
+        //console.log(e);
+      }
     }
     useEffect(() => {
         inputRef.current.focus();
@@ -46,6 +48,11 @@ const UserPage = () => {
           </div>
         )
     }
+    const printErrorMessage = () => {
+      return (
+      <div className="errorMessage"><span className="strong"> NOT FOUND!</span> Try enother one.</div>
+      )
+    }
     return (
         <div className="container userPage">
             <Header />
@@ -57,6 +64,7 @@ const UserPage = () => {
                 <button className="searchButton" type="button" onClick={() => findUser()}>Find</button>
             </form>
             {currentUser && printUserInfo()}
+            {!isUser && printErrorMessage()}
         </div>
     )
 }

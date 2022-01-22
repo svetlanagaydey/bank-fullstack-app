@@ -81,6 +81,14 @@
 }
 .delete {
     border: 3px dotted red;
-
+}
+.errorMessage {
+    text-align: center;
+    font-size: 4vmin;
+    color: rgb(100, 213, 238);
+}
+.errorMessage .strong {
+    font-weight: 700;
+    color:rgb(23, 65, 103);
 }
 
