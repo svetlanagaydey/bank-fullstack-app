@@ -40,7 +40,7 @@ const UsersPage = () => {
     return (
         <div className="container">
             <Header />
-            <h2 className="users-header">List of all users</h2>
+            <h2 className="users-header">List of all Clients</h2>
 				{print()}
         </div>
     )
