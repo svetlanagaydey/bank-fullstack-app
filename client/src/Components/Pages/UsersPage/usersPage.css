@@ -1,79 +1,87 @@
 .users-header {
-    text-align: center;
-    margin: auto;
-    font-family: 'arial';
-    font-size: 4vmin;
-    padding: 20px 0;
+  text-align: center;
+  margin: auto;
+  font-family: "arial";
+  font-size: 4vmin;
+  padding: 20px 0;
 }
 .clients-list {
-    width: 80%;
-    margin: auto;
-    text-align: center;
+  width: 80%;
+  margin: auto;
+  text-align: center;
 }
 .client {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border: 1px dotted rgb(21, 46, 82);
-    border-radius: 10px;
-    background-color: white;
-    margin-bottom: 2vmin;
-    padding: 0 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px dotted rgb(21, 46, 82);
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 2vmin;
+  padding: 0 50px;
 }
 .info-block {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-    grid-gap: 10px;
-    grid-template-areas:
-        "firstName lastName"
-        "id id"
-        "cash credit";
-    flex-grow: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  grid-template-areas:
+    "passport birthDay"
+    "firstName lastName"
+    "id id"
+    "cash credit";
+  flex-grow: 2;
 }
 .client {
-    text-align: left;
-    display: flex;
-    justify-content: space-around;
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
 }
 .client-icon {
-    display: inline-block;
-    width: 200px;
-    height: 200px;
-    background-image: url(../../../Assets/Images/investor.png);
-    background-repeat: no-repeat;
-    flex-grow: 1;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  background-image: url(../../../Assets/Images/investor.png);
+  background-repeat: no-repeat;
+  flex-grow: 1;
 }
+.passport,
 .firstName,
 .lastName,
+.birthDay,
 .credit,
 .cash,
 .id {
-    background-color: rgb(245, 230, 192);
-    border-radius: 4px;
-    padding: 16px 0 16px 30px;
-    display: inline-block;
-    font-size: 3vmin;
-    line-height: 1;
-    font-weight: 600;
+  background-color: rgb(245, 230, 192);
+  border-radius: 4px;
+  padding: 16px 0 16px 30px;
+  display: inline-block;
+  font-size: 3vmin;
+  line-height: 1;
+  font-weight: 600;
+}
+.passport {
+  grid-area: passport;
 }
 .firstName {
-    grid-area: firstName;
+  grid-area: firstName;
 }
 .lastName {
-    grid-area: lastName;
+  grid-area: lastName;
+}
+.birthDay {
+  grid-area: birthDay;
 }
 .credit {
-    grid-area: credit;
+  grid-area: credit;
 }
 .cash {
-    grid-area: cash;
+  grid-area: cash;
 }
 .id {
-    grid-area: id;
+  grid-area: id;
 }
 .formSubtitles {
-    color: rgb(133, 145, 170);
-    font-weight: 400;
+  color: rgb(133, 145, 170);
+  font-weight: 400;
 }
-

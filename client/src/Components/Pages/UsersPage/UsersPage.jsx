@@ -25,6 +25,8 @@ const UsersPage = () => {
 						<li className="client" key={index}>
 							<span className="client-icon"></span>
 							<div className="info-block">
+								<p className="passport"><span className="formSubtitles">Passport: </span>{user.passport}</p>
+								<p className="birthDay"><span className="formSubtitles">Birthday: </span>{user.birthDay}</p>
 								<p className="firstName"><span className="formSubtitles">First Name: </span>{user.firstName}</p>
 								<p className="lastName"><span className="formSubtitles">Last Name: </span>{user.lastName}</p>
 								<p className="id"><span className="formSubtitles">id: </span>{user._id}</p>

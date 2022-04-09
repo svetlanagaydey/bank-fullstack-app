@@ -2,11 +2,18 @@ const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema(
   {
+    passport: {
+      type: String
+    },
     firstName: {
       type: String
     },
     lastName: {
       type:String
+    },
+    birthDay:
+     {
+      type: String
     },
     cash: {
       type: Number,

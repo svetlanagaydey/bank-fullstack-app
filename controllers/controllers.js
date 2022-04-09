@@ -3,12 +3,12 @@ const { validateObjectId, validateNumber } = require("./utils");
 
 const addUser = async (req, res) => {
   try {
-    const { firstName, lastName, cash, credit } = req.body;
-    const user = new User({ firstName: firstName, lastName:lastName, cash: cash || 0, credit: credit || 0 });
+    const { passport, firstName, lastName, birthDay, cash, credit } = req.body;
+    const user = new User({ passport: passport, firstName: firstName, lastName:lastName, birthDay: birthDay, cash: cash, credit: credit, isActive: true });
     await user.save();
     res.status(200).send({ message: "Added Successfully" });
   } catch (error) {
-    res.status(500).send({ error: error.message });
+    res.status(501).send({ error: error.message });
   }
 };
 
