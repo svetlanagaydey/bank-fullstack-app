@@ -3,18 +3,19 @@ const userRouter = express.Router();
 const {
   getAllUsers,
   appendUsers,
-  addUser,
   getUser,
+  addUser,
   deposit,
-  deleteUser,
   withdraw,
   updateCredit,
+  deleteUser,
 } = require("../controllers/controllers");
 
-userRouter.get("/:appendLength", getAllUsers);
-userRouter.get("/:appendLength/:currentPage", appendUsers);
+userRouter.get("/users/:appendLength", getAllUsers);
 
-userRouter.get("/:id", getUser);
+userRouter.get("/users/:appendLength/:currentPage", appendUsers);
+
+userRouter.get("/user/:id", getUser);
 
 userRouter.post("/", addUser);
 

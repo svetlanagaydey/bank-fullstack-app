@@ -27,6 +27,9 @@ const userSchema = new Schema(
     isActive: {
       type: Boolean,
     },
+    id: {
+      type: String
+    }
   },
   { timestamps: true }
 );

@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import myApi from '../../../api/Api';
 const DeleteUser = () => {
   const [isDeleted, setIsDeleted] = useState(false);
-    const user = (JSON.parse (localStorage.getItem('userToDelete'))).user;
+    const user = (JSON.parse (localStorage.getItem('userToDelete')));
     console.log(user);
 
   useEffect(() => {

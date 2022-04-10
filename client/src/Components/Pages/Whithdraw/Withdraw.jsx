@@ -9,7 +9,7 @@ import './withdraw.css';
 const Withdraw = () => {
 	const [isWithdrawed, setIsWithdrawed] = useState(false);
 	const [inputWithdraw, setInputWithdraw] = useState(0);
-	const user = (JSON.parse (localStorage.getItem('userToDelete'))).user;
+	const user = (JSON.parse (localStorage.getItem('userToDelete')));
 	const withdrow = async(e) => {
 		e.preventDefault();
 		console.log(user.firstName)

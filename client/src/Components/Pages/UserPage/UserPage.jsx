@@ -11,15 +11,19 @@ const UserPage = () => {
     const [isUser, setIsUser] = useState(true);
     const inputRef = React.createRef();
 
-    const findUser = async() => {
+    const findUser = async(e) => {
+      e.preventDefault();
       try {
-        const { data } = await myApi.get(`/users/${searchingId}`);
-        setCarrentUser(data); 
+        console.log(searchingId)
+        const data = await myApi.get(`/users/user/${searchingId}`);
+        console.log(data.data.user)
+        setCarrentUser(data.data.user); 
         setIsUser(true);
       } catch (e) {
+
         setIsUser(false);
         setCarrentUser("");
-        //console.log(e);
+        console.log(e);
       }
     }
     
@@ -29,6 +33,7 @@ const UserPage = () => {
 
     const setUserToLocal = () => {
       localStorage.setItem('userToDelete', JSON.stringify(currentUser));
+      console.log(currentUser);
       //console.log(currentUser.user);
     }
 
@@ -38,16 +43,16 @@ const UserPage = () => {
             <div className="client">
               <span className="client-icon"></span>
               <div className="info-block">
-                <p className="firstName"><span className="formSubtitles">First Name: </span>{currentUser.user.firstName}</p>
-                <p className="lastName"><span className="formSubtitles">Last Name: </span>{currentUser.user.lastName}</p>
-                <p className="id"><span className="formSubtitles">id: </span>{currentUser.user._id}</p>
-                <p className="credit"><span className="formSubtitles">credit: </span>{currentUser.user.cash}</p>
-                <p className="cash"><span className="formSubtitles">cash: </span>{currentUser.user.credit}</p>
+                <p className="firstName"><span className="formSubtitles">First Name: </span>{currentUser.firstName}</p>
+                <p className="lastName"><span className="formSubtitles">Last Name: </span>{currentUser.lastName}</p>
+                <p className="id"><span className="formSubtitles">id: </span>{currentUser._id}</p>
+                <p className="credit"><span className="formSubtitles">credit: </span>{currentUser.credit}</p>
+                <p className="cash"><span className="formSubtitles">cash: </span>{currentUser.cash}</p>
               </div>
             </div>
             <ul className="options-list">
               <li className="userOption deposit"
-              onClick={setUserToLocal()}>
+              onClick={ () => setUserToLocal()}>
                 <Link to="/deposit">
                   <span className="icon depositIcon"></span>
                   Deposit
@@ -55,21 +60,21 @@ const UserPage = () => {
               </li>
                 
               <li className="userOption withdraw" 
-              onClick={setUserToLocal()}>
+              onClick={ () => setUserToLocal()}>
                 <Link to="/withdraw">
                   <span className="icon withdrawIcon"></span>
                   Withdraw
                 </Link>
               </li>
               <li className="userOption updateName"
-              onClick={setUserToLocal()}>
+              onClick={ () => setUserToLocal()}>
                 <Link to="/update">
                   <span className="icon updateNameIcon"></span>
                   Update
                 </Link>
               </li>
               <li className="userOption delete"
-              onClick={setUserToLocal()}>
+              onClick={ () => setUserToLocal()}>
                 <Link to="/delete">
                   <span className="icon deleteIcon"> </span>
                   Delete
@@ -88,11 +93,11 @@ const UserPage = () => {
         <div className="container userPage">
             <Header />
             <h2 className="user-header">Enter Client's ID to searching</h2>
-            <form className="searching-bloc">
+            <form className="searching-bloc" onSubmit={findUser}>
                 <input type="text" name="searchingId" value={searchingId} ref={inputRef} 
                     onChange={(e) => {setSearchingId(e.target.value)}}
                  />
-                <button className="searchButton" type="button" onClick={() => findUser()}>Find</button>
+                <button className="searchButton" type="submit">Find</button>
             </form>
             {currentUser && printUserInfo()}
             {!isUser && printErrorMessage()}

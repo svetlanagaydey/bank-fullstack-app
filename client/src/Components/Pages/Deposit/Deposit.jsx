@@ -8,7 +8,7 @@ import './deposit.css';
 const Deposit = () => {
     const [isDeposited, setIsDeposited] = useState(false);
 	const [inputDeposit, setInputDeposit] = useState(0);
-	const user = (JSON.parse (localStorage.getItem('userToDelete'))).user;
+	const user = (JSON.parse (localStorage.getItem('userToDelete')));
 	const deposit = async(e) => {
 		e.preventDefault();
 		try {

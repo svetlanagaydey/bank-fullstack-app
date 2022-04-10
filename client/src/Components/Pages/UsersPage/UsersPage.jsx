@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Header from '../../Header/Header';
 import myApi from '../../../api/Api'
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import './usersPage.css';
@@ -15,7 +15,7 @@ const UsersPage = () => {
 	
 useEffect(() => {
 	const getReq = async () => {
-    const { data } = await myApi.get(`/users/${APPEND_LENGTH}`);
+    const { data } = await myApi.get(`/users/users/${APPEND_LENGTH}`);
     setData(data.users);
   };
   getReq();
@@ -28,7 +28,7 @@ useEffect(() => {
 const fetchMoreData = async () => {
 	try {
     setTimeout(async() => {
-		const append = await myApi.get(`/users/${APPEND_LENGTH}/${currentPage}`);
+		const append = await myApi.get(`/users/users/${APPEND_LENGTH}/${currentPage}`);
 		console.log(append.data.users.length);
     if (append.data.users.length < APPEND_LENGTH ) {
       setHasMore(false);
@@ -69,7 +69,7 @@ const fetchMoreData = async () => {
             );
           })}
         </InfiniteScroll>
-        {!hasMore && <div>There are all clients!</div>}
+        {!hasMore && <div>There is no more clients!</div>}
       </div>
     </div>
   )
