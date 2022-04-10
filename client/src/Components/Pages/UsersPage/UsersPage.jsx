@@ -30,8 +30,8 @@ const UsersPage = () => {
 								<p className="firstName"><span className="formSubtitles">First Name: </span>{user.firstName}</p>
 								<p className="lastName"><span className="formSubtitles">Last Name: </span>{user.lastName}</p>
 								<p className="id"><span className="formSubtitles">id: </span>{user._id}</p>
-								<p className="credit"><span className="formSubtitles">credit: </span>{user.cash}</p>
-								<p className="cash"><span className="formSubtitles">cash: </span>{user.credit}</p>
+								<p className="credit"><span className="formSubtitles">credit: </span>{user.credit}</p>
+								<p className="cash"><span className="formSubtitles">cash: </span>{user.cash}</p>
 							</div>
 						</li>
 					);
