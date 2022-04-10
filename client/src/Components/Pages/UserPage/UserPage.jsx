@@ -22,6 +22,7 @@ const UserPage = () => {
         //console.log(e);
       }
     }
+    
     useEffect(() => {
         inputRef.current.focus();
     },[currentUser]);
@@ -45,10 +46,35 @@ const UserPage = () => {
               </div>
             </div>
             <ul className="options-list">
-              <li className="userOption deposit"> <span className="icon depositIcon"></span>Deposit</li>
-              <li className="userOption withdraw"> <span className="icon withdrawIcon"></span>Withdraw</li>
-              <li className="userOption updateName"> <span className="icon updateNameIcon"></span>Update</li>
-              <li className="userOption delete" onClick={setUserToLocal()}> <Link to="/delete"> <span className="icon deleteIcon"> </span> Delete </Link> </li>
+              <li className="userOption deposit"
+              onClick={setUserToLocal()}>
+                <Link to="/deposit">
+                  <span className="icon depositIcon"></span>
+                  Deposit
+                </Link>
+              </li>
+                
+              <li className="userOption withdraw" 
+              onClick={setUserToLocal()}>
+                <Link to="/withdraw">
+                  <span className="icon withdrawIcon"></span>
+                  Withdraw
+                </Link>
+              </li>
+              <li className="userOption updateName"
+              onClick={setUserToLocal()}>
+                <Link to="/update">
+                  <span className="icon updateNameIcon"></span>
+                  Update
+                </Link>
+              </li>
+              <li className="userOption delete"
+              onClick={setUserToLocal()}>
+                <Link to="/delete">
+                  <span className="icon deleteIcon"> </span>
+                  Delete
+                </Link>
+              </li>
             </ul>
           </div>
         )

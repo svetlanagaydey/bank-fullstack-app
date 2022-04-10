@@ -1,59 +1,58 @@
 .deleteMainTitle {
-    margin: 5vh 0;
-    text-align: center;
+  margin: 5vh 0;
+  text-align: center;
 }
 .deleteCard {
-    min-height: 100px;
-    width: 42%;
-    margin: 2vh auto;
-    line-height: 100px;
-    font-size: 3vmin;
-    border: 2px dotted red;
-    /* border: 2px dotted rgb(23, 65, 103);; */
-    border-radius: 10px;
-    padding: 38px;
+  min-height: 100px;
+  width: 42%;
+  margin: 2vh auto;
+  line-height: 100px;
+  font-size: 3vmin;
+  border: 2px dotted red;
+  /* border: 2px dotted rgb(23, 65, 103);; */
+  border-radius: 10px;
+  padding: 38px;
 }
 .deleteTitle {
-    font-family: 'Rajdhani';
-    font-weight: 700;
-    font-size: 3vmin;
-    text-align: center;
-    margin: 0;
-    padding: 0;
+  font-family: "Rajdhani";
+  font-weight: 700;
+  font-size: 3vmin;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 .userAttribute {
-    display: flex;
-    padding: 0 30px;
-    margin-bottom: 20px;
-    border: 1px solid rgb(249, 202, 47);
+  display: flex;
+  padding: 0 30px;
+  margin-bottom: 20px;
+  border: 1px solid rgb(249, 202, 47);
 }
 .attributeLable {
-    width: 25%;
-    color: rgb(249, 202, 47);
+  width: 25%;
+  color: rgb(249, 202, 47);
 }
 .attributeValue {
-    width: 70%;
+  width: 70%;
 }
 .deleteButton {
-    width: 47%;
-    border: none;
-    background: rgb(248, 211, 211);
-    color: red;
-    padding: 30px 0;
-    font-weight: 700;
-    font-size: 5vmin;
-    border-radius: 10px;
-    text-align: center;
-    margin: auto;
+  width: 47%;
+  border: none;
+  background: rgb(248, 211, 211);
+  color: red;
+  padding: 30px 0;
+  font-weight: 700;
+  font-size: 5vmin;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
 }
-.deleteButton:hover  {
-    color: white;
-    background: rgb(247, 62, 62);
+.deleteButton:hover {
+  color: white;
+  background: rgb(247, 62, 62);
 }
 .successMessage {
-
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
 }

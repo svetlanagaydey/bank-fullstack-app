@@ -50,13 +50,8 @@ const deleteUser = async (req, res) => {
 const deposit = async (req, res) => {
   try {
     const id = req.params.id;
-    validateObjectId(id);
     const amount = req.body.amount;
-    validateNumber(amount);
     const user = await User.findById(id);
-    if (!user) {
-      return res.status(404).send({ error: "User not found" });
-    }
     user.cash += amount;
     await user.save();
     res.status(200).send({ message: `Added ${amount} to ${user._id}` });
@@ -69,14 +64,10 @@ const withdraw = async (req, res) => {
   try {
     const id = req.params.id;
     const amount = req.body.amount;
-    validateObjectId(id);
-    validateNumber(amount);
     const user = await User.findById(id);
-    if (!user) {
-      return res.status(404).send({ error: "User not found" });
-    }
     userTotal = user.cash + user.credit;
     if (amount > userTotal) {
+      // console.log("not enough money");
       throw new Error("Not enough money to withdraw");
     }
     user.cash -= amount;
