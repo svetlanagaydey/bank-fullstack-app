@@ -23,6 +23,7 @@
     "mongoose": "^6.1.7",
     "mongosh": "^1.1.9",
     "nodemon": "^2.0.15",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react-infinite-scroll-component": "^6.1.0"
   }
 }

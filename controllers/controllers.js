@@ -13,8 +13,20 @@ const addUser = async (req, res) => {
 };
 
 const getAllUsers = async (req, res) => {
+  const appendLength = req.params.appendLength;
   try {
-    const allUsers = await User.find();
+    const allUsers = await User.find().limit(appendLength);
+    res.status(200).send({ users: allUsers });
+  } catch (error) {
+    res.status(404).send({ error: error.message });
+  }
+};
+
+const appendUsers = async (req, res) => {
+  const appendLength = req.params.appendLength;
+  const currentPage = req.params.currentPage;
+  try {
+    const allUsers = await User.find().skip(currentPage*appendLength).limit(appendLength);
     res.status(200).send({ users: allUsers });
   } catch (error) {
     res.status(404).send({ error: error.message });
@@ -93,4 +105,4 @@ const updateCredit = async (req, res) => {
   }
 };
 
-module.exports = { getAllUsers, getUser, addUser, deposit, deleteUser, withdraw, updateCredit };
+module.exports = { getAllUsers, appendUsers, getUser, addUser, deposit, deleteUser, withdraw, updateCredit };

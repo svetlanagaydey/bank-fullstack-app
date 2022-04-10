@@ -2,6 +2,7 @@ const express = require("express");
 const userRouter = express.Router();
 const {
   getAllUsers,
+  appendUsers,
   addUser,
   getUser,
   deposit,
@@ -10,7 +11,8 @@ const {
   updateCredit,
 } = require("../controllers/controllers");
 
-userRouter.get("/", getAllUsers);
+userRouter.get("/:appendLength", getAllUsers);
+userRouter.get("/:appendLength/:currentPage", appendUsers);
 
 userRouter.get("/:id", getUser);
 
