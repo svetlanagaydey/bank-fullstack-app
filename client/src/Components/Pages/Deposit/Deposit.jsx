@@ -8,7 +8,14 @@ import './deposit.css';
 const Deposit = () => {
     const [isDeposited, setIsDeposited] = useState(false);
 	const [inputDeposit, setInputDeposit] = useState(0);
+
+	const inputRef = React.createRef();
 	const user = (JSON.parse (localStorage.getItem('userToDelete')));
+
+	useEffect(() => {
+        inputRef.current.focus();
+    },[]);
+
 	const deposit = async(e) => {
 		e.preventDefault();
 		try {
@@ -64,7 +71,7 @@ const Deposit = () => {
 			{isDeposited && printSuccessMessage()}
 			{!isDeposited && (
 				<form className='input-block' onSubmit={deposit}>
-					<input type="number" className="withdrawInput" id="withdraw" onChange={(e) => setInputDeposit(e.target.value)} placeholder="Enter deposit amount: "></input>
+					<input type="number" className="withdrawInput" id="withdraw" onChange={(e) => setInputDeposit(e.target.value)} placeholder="Enter deposit amount: " ref={inputRef}></input>
 					<button type="submit" className="withdrawButton">DEPOSIT</button>
 				</form>
 			)}

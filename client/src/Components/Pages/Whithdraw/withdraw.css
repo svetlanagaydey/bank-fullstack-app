@@ -1,9 +1,33 @@
 .container .input-block {
+  height: 6rem;
   display: flex;
   justify-content: space-between;
   margin: auto;
+  margin-top: 2rem;
   width: 47%;
-  max-height: 10vh;
+}
+.withdrawInput {
+  width: 67%;
+  text-align: center;
+  padding: 0 2vmin;
+  background-color: rgb(100, 213, 238);
+  border: 6px solid transparent;
+  border-radius: 10px;
+  font-size: 3vmin;
+  font-weight: 700;
+  color: rgb(23, 65, 103);
+}
+.withdrawButton {
+  width: 23%;
+  border: none;
+  background: rgb(23, 65, 103);
+  color: white;
+  padding: 32px 0;
+  /* font-weight: 700; */
+  font-size: 2vmin;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
 }
 .withdrawCard {
   min-height: 100px;
@@ -17,7 +41,7 @@
   padding: 38px;
 }
 .currentSum {
-  font-size: 5vmin;
+  font-size: 4vmin;
 }
 .withdrawTitle {
   font-size: larger;
@@ -27,37 +51,21 @@
   display: flex;
   justify-content: space-between;
 }
-.withdrawButton {
-  width: 46%;
-  border: none;
-  background: rgb(23, 65, 103);
-  color: white;
-  padding: 20px 0;
-  font-weight: 700;
-  font-size: 3vmin;
-  border-radius: 10px;
-  text-align: center;
-  margin: auto;
-}
 .attributeLable {
   width: fit-content;
 }
 .withdrawButton:hover {
   background-color: rgb(238, 192, 92);
 }
-.withdrawInput {
-  background: rgb(238, 192, 92);
-  width: 45%;
-  border: 1px dotted rgb(23, 65, 103);
-  border-radius: 10px;
-  font-size: 2.8vmin;
-  text-align: center;
-  font-weight: 700;
-  color: rgb(23, 65, 103);
-  padding: 0 2vmin;
-}
 .withdrawInput::placeholder {
-  font-size: 2vmin;
+  font-size: 2.5vmin;
+  font-weight: normal;
+  color: white;
+}
+.withdrawInput:hover,
+.withdrawInput:focus {
+  border: 6px solid rgb(245, 200, 51);
+  outline: 0 solid rgb(245, 200, 51);
 }
 .successMesage {
   font-size: 3vmin;

@@ -1,5 +1,5 @@
 import Header from '../../Header/Header';
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import myApi from '../../../api/Api';
 import './withdraw.css';
 
@@ -9,7 +9,14 @@ import './withdraw.css';
 const Withdraw = () => {
 	const [isWithdrawed, setIsWithdrawed] = useState(false);
 	const [inputWithdraw, setInputWithdraw] = useState(0);
+
+	const inputRef = React.createRef();
 	const user = (JSON.parse (localStorage.getItem('userToDelete')));
+
+	useEffect(() => {
+		inputRef.current.focus();
+},[]);
+
 	const withdrow = async(e) => {
 		e.preventDefault();
 		console.log(user.firstName)
@@ -67,7 +74,7 @@ const Withdraw = () => {
 			{isWithdrawed && printSuccessMessage()}
 			{!isWithdrawed && (
 				<form className='input-block' onSubmit={withdrow}>
-					<input type="number" className="withdrawInput" id="withdraw" onChange={(e) => setInputWithdraw(e.target.value)} placeholder="Enter withdraw amount: "></input>
+					<input type="number" className="withdrawInput" id="withdraw" onChange={(e) => setInputWithdraw(e.target.value)} placeholder="Enter withdraw amount: " ref={inputRef} ></input>
 					<button type="submit" className="withdrawButton">WITHDRAW</button>
 				</form>
 			)}
