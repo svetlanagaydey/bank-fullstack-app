@@ -61,14 +61,14 @@ const UserPage = () => {
                 
               <li className="userOption withdraw" 
               onClick={ () => setUserToLocal()}>
-                <Link to="/withdraw">
+                <Link to="/withdraw" state={{ currentUser: {currentUser} }}>
                   <span className="icon withdrawIcon"></span>
                   Withdraw
                 </Link>
               </li>
               <li className="userOption updateName"
-              onClick={ () => setUserToLocal()}>
-                <Link to="/update">
+              >
+                <Link to="/update" state={{ client: currentUser }} >
                   <span className="icon updateNameIcon"></span>
                   Update
                 </Link>

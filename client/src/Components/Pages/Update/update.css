@@ -1,0 +1,7 @@
+.addButton:disabled {
+  opacity: 70%;
+}
+.addButton:disabled:hover {
+  background-color: rgb(30, 74, 115);
+  color: white;
+}
