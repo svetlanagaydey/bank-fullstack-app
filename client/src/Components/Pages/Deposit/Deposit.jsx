@@ -6,20 +6,25 @@ import './deposit.css';
 
 
 const Deposit = () => {
+	const [currentClient,setCurrentClient] = useState(JSON.parse (localStorage.getItem('userToDelete')))
     const [isDeposited, setIsDeposited] = useState(false);
 	const [inputDeposit, setInputDeposit] = useState(0);
 
 	const inputRef = React.createRef();
-	const user = (JSON.parse (localStorage.getItem('userToDelete')));
+	//const user = (JSON.parse (localStorage.getItem('userToDelete')));
 
 	useEffect(() => {
         inputRef.current.focus();
     },[]);
 
+	useEffect(() => {
+		updateClient();
+	}, [isDeposited])
+
 	const deposit = async(e) => {
 		e.preventDefault();
 		try {
-			await myApi.put(`/users/deposit/${user._id}`, {
+			await myApi.put(`/users/deposit/${currentClient._id}`, {
 				amount: parseFloat(inputDeposit)
 			})
 			setIsDeposited(true);
@@ -29,26 +34,35 @@ const Deposit = () => {
 		}
 	}
 
+	const updateClient = async(e) => {
+		try {
+			const data = await myApi.get(`/users/user/${currentClient._id}`);
+			setCurrentClient(data.data.user);
+		} catch (e) {
+			console.log(e);
+		} 
+	}
+
 	const printUserInfo = () => {
 		return (
 			<div>
 				<div className="withdrawCard">
-					<p className="withdrawTitle">CURRENT BALLANCE: <span className="currentSum">{user.cash} </span>&#8362;</p>
+					<p className="withdrawTitle">CURRENT BALLANCE: <span className="currentSum">{currentClient.cash} </span>&#8362;</p>
 					<div className="userInfo">
 						<ul className="userAttributesList">
 							<li className="userAttribute">
 								<span className="attributeLable">PASSPORT: </span>
-								<span className="attributeValue"> {user.passport}</span>
+								<span className="attributeValue"> {currentClient.passport}</span>
 							</li>
 
 							<li className="userAttribute">
 								<span className="attributeLable">Name: </span>
-								<span className="attributeValue"> {user.firstName} {user.lastName}</span>
+								<span className="attributeValue"> {currentClient.firstName} {currentClient.lastName}</span>
 							</li>
 
 							<li className="userAttribute">
 								<span className="attributeLable">Credit: </span>
-								<span className="attributeValue">{user.credit}</span>
+								<span className="attributeValue">{currentClient.credit}</span>
 							</li>
 						</ul>
 					</div>
