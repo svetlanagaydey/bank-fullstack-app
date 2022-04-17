@@ -7,7 +7,7 @@ const {
   addUser,
   deposit,
   withdraw,
-  updateCredit,
+  update,
   deleteUser,
 } = require("../controllers/controllers");
 
@@ -23,7 +23,7 @@ userRouter.put("/deposit/:id", deposit);
 
 userRouter.put("/withdraw/:id", withdraw);
 
-userRouter.put("/updatecredit/:id", updateCredit);
+userRouter.put("/update/:id",  update);
 
 userRouter.delete("/:id", deleteUser);
 

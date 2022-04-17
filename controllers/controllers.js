@@ -76,16 +76,20 @@ const withdraw = async (req, res) => {
   }
 };
 
-const updateCredit = async (req, res) => {
+const update = async (req, res) => {
   const id = req.params.id;
-  const creditAmount = req.body.amount;
+  const { passport, firstName, lastName, credit}  = req.body;
+  console.log("hello")
   try {
-    validateObjectId(id);
-    validateNumber(creditAmount);
-    const user = await User.findById(id);
-    user.credit = creditAmount;
-    const updatedUser = await user.save();
-    res.status(200).send({ message: `User Credit is now ${updatedUser.credit}` });
+    
+    const client = await User.findById(id);
+    if (passport) {client.passport = passport};
+    if (firstName) {client.firstName = firstName};
+    if (lastName) {client.lastName = lastName};
+    if (credit) {client.credit = credit};
+
+    const updatedUser = await client.save();
+    res.status(200).send({  message: "Updated Successfully" });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
@@ -104,4 +108,4 @@ const deleteUser = async (req, res) => {
   }
 };
 
-module.exports = { getAllUsers, appendUsers, getUser, addUser, deposit, withdraw, updateCredit, deleteUser };
+module.exports = { getAllUsers, appendUsers, getUser, addUser, deposit, withdraw, update, deleteUser };

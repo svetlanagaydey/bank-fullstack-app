@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
+import myApi from '../../../api/Api'
 import Header from '../../Header/Header';
 import './update.css';
 
@@ -17,10 +18,21 @@ const Update = () => {
     console.log(isUpd)
   }, [updatedClient, isUpd]);
 
-  const update = (event) => {
+  const update = async(event) => {
     event.preventDefault();
-    console.log(updatedClient);
-    setIsUpd(true);
+    try {  
+      await myApi.put(`/users/update/${client._id}`, {
+        passport: updatedClient.passport,
+        firstName: updatedClient.firstName,
+        lastName: updatedClient.lastName,
+        credit: updatedClient.credit
+
+      });
+      console.log("updated from client");
+      setIsUpd(true);
+    } catch (err) {
+      console.log(err.message);
+    }
   }
 
   const onHandlerChange = (e) => {
