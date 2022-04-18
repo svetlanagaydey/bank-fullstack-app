@@ -26,7 +26,9 @@ const getUser = async (req, res) => {
   try {
     const id = req.params.id;
     const user = await User.findById(id);
-    
+    if(user == null) {
+      throw new Error('Required');
+    } 
     res.status(200).send({ user: user });
   } catch (error) {
     res.status(404).send({ error: error.message });
