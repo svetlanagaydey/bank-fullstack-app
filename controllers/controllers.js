@@ -110,4 +110,18 @@ const deleteUser = async (req, res) => {
   }
 };
 
-module.exports = { getAllUsers, appendUsers, getUser, addUser, deposit, withdraw, update, deleteUser };
+const getByPassport = async (req, res) => {
+  try {
+    const passport = req.params.passport;
+    const client = await User.findOne({passport: passport});
+
+    if(client == null) {
+      throw new Error('Required');
+    } 
+    res.status(200).send(client);
+  } catch (error) {
+    res.status(404).send({ error: "error.message" });
+  }
+}
+
+module.exports = { getAllUsers, appendUsers, getUser, addUser, deposit, withdraw, update, deleteUser, getByPassport };

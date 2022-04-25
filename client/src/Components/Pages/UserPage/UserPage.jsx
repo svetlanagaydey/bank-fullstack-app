@@ -20,7 +20,6 @@ const UserPage = () => {
         setCarrentUser(data.data.user); 
         setIsUser(true);
       } catch (e) {
-
         setIsUser(false);
         setCarrentUser("");
         console.log(e);

@@ -9,6 +9,7 @@ const {
   withdraw,
   update,
   deleteUser,
+  getByPassport,
 } = require("../controllers/controllers");
 
 userRouter.get("/users/:appendLength", getAllUsers);
@@ -26,5 +27,7 @@ userRouter.put("/withdraw/:id", withdraw);
 userRouter.put("/update/:id",  update);
 
 userRouter.delete("/:id", deleteUser);
+
+userRouter.get("/transfer/:passport", getByPassport);
 
 module.exports = userRouter;
