@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import StartPage from './Components/Pages/StartPage/StartPage';
 import UserPage from './Components/Pages/UserPage/UserPage';
@@ -9,11 +9,13 @@ import DeleteUser from './Components/Pages/DeleteUser/DeleteUser';
 import Withdraw from './Components/Pages/Whithdraw/Withdraw';
 import Deposit from './Components/Pages/Deposit/Deposit';
 import Update from './Components/Pages/Update/Update';
+import { Context } from "./Context.js";
 
 function App() {
+  const [context, setContext] = useState("");
   return (
-    <Router >
-      <div>
+    <Context.Provider value={[context, setContext]}>
+      <Router>
         <Routes> 
             <Route path="/" exact element={<StartPage/>}/>
             <Route path="/user" element={<UserPage/>}/>
@@ -25,8 +27,8 @@ function App() {
             <Route path="/add" element={<AddUser/>}/>
             <Route path="/delete" element={<DeleteUser/>}/>
         </Routes> 
-      </div>
-    </Router>
+      </Router>
+    </Context.Provider>
   )
 }
 export default App;
