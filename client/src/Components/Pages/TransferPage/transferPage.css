@@ -1,8 +1,104 @@
 .transfer-header {
-    text-align: center;
-    margin: auto;
-    font-family: 'arial';
-    font-size: 4vmin;
-    padding: 20px 0;
-    color:  rgb(23, 65, 103);
+  text-align: center;
+  margin: auto;
+  font-family: "arial";
+  font-size: 4vmin;
+  padding: 20px 0;
+  color: rgb(23, 65, 103);
+}
+.transfer__client-section {
+  border: 1px dotted rgb(23, 65, 103);
+  border-radius: 1rem;
+  padding: 2rem 0;
+  width: 30%;
+}
+.transfer__client {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2%;
+}
+.transfer__client-info {
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.icon-transfer-from,
+.icon-transfer-to {
+  display: block;
+  background-repeat: no-repeat;
+  margin: 20px;
+  width: 50px;
+  height: 50px;
+}
+.icon-transfer-from {
+  background-image: url(../../../Assets/Images/export.png);
+}
+
+.icon-transfer-to {
+  background-image: url(../../../Assets/Images/cash.png);
+}
+button:disabled,
+button[disabled] {
+  opacity: 50%;
+}
+.transfer__name,
+.transfer__ballance {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.transfer__name {
+  color: rgb(238, 192, 92);
+}
+
+.transfer__clients-block {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+.transfer-input {
+  margin: auto;
+}
+.transfer-input label {
+  display: block;
+  text-align: left;
+  padding: 0 0 1rem 4rem;
+}
+.transfer-input input,
+.transfer-input button {
+  display: inline-block;
+  padding: 0.6rem;
+  font-size: 2vmin;
+  border-radius: 10px;
+}
+.transfer-input button {
+  border: 3px solid rgb(23, 65, 103);
+  color: white;
+  background: rgb(23, 65, 103);
+  margin-left: 20px;
+  font-size: 3vmin;
+}
+.transfer-input input {
+  border: 3px solid rgb(23, 65, 103);
+  font-size: 3vmin;
+  width: 35%;
+  color: rgb(23, 65, 103);
+  background-color: rgb(100, 213, 238);
+  cursor: pointer;
+}
+.transfer-input input:hover,
+.transfer-input input:focus {
+  border: 3px solid rgb(245, 200, 51);
+  outline: 1px solid rgb(245, 200, 51);
+}
+.transer-amount {
+  width: 30%;
+}
+.transer-amount input::placeholder,
+.transfer__client-section input::placeholder {
+  font-size: 1rem;
+  color: white;
+  opacity: 0.7; /* Firefox */
+  font-style: italic;
 }

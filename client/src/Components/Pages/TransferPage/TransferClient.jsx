@@ -7,8 +7,9 @@ const TransferClient = (props) => {
 	const [passport, setPassport] = useState();
 	const [client, setClient] = useState();
 	const [isUser, setIsUser] = useState(false);
-	const type = props.type;
 
+	const type = props.type;
+	const transferCompleted = props.transferCompleted;
 
 	const [context, setContext] = useContext(Context);
 
@@ -17,9 +18,18 @@ const TransferClient = (props) => {
 	}
 
 	useEffect(() => {
-console.log(client);
-console.log(isUser)
-	}, [isUser])
+		transferCompleted && updateUser();
+		transferCompleted && console.log(client.cash);
+	},[transferCompleted]);
+
+	const updateUser = async () => {
+		try {
+			const data = await myApi.get(`/users/user/${client._id}`);
+			setClient(data.data.user); 
+		} catch (e) {
+			console.log(e);
+		}
+	}
 
 	const onHandleSubmit = async(e) => {
 		e.preventDefault();
@@ -42,25 +52,27 @@ console.log(isUser)
 		}
 	}
 	return (
-		<div className={type}>
-			<form action="" name={type} onSubmit={onHandleSubmit}>
-				<label htmlFor=""></label>
-				<input type="text" onChange={(e) => onHandleChange(e)} />
-				<button type='submit'>Find</button>
+		<div className="transfer__client-section">
+			<form action="" name={type} onSubmit={onHandleSubmit} className="transfer-input">
+				<label htmlFor=""> Transfer {type==="transfer-from" ? "From" : "To"} : </label>
+				<input type="text" onChange={(e) => onHandleChange(e)} placeholder="Enter passport" />
+				<button type='submit' disabled={transferCompleted}>Find</button>
 			</form>
 			{isUser && (
-				<div className="transfer__client-data">
-					<div className="transfer__client-field">
-						<span className="transfer__field-name">Name: </span>
-						<span className="transfer__field-value">{client.firstName} {client.lastName}</span>
-					</div>
-					<div className="transfer__client-field">
-						<span className="transfer__field-name">Cash: </span>
-						<span className="transfer__field-value">{client.cash}</span>
-					</div>
-					<div className="transfer__client-field">
-						<span className="transfer__field-name">Credit: </span>
-						<span className="transfer__field-value">{client.credit}</span>
+				<div className="transfer__client">
+					<span className={`icon-${type}`}></span>
+					<div className="transfer__client-info">
+						<div className="transfer__client-field transfer__name">
+							{client.firstName} {client.lastName}
+						</div>
+						<div className="transfer__client-field">
+							<span className="transfer__field-name">Ballance: </span>
+							<span className="transfer__field-value transfer__ballance">{client.cash} &#8362;</span>
+						</div>
+						<div className="transfer__client-field">
+							<span className="transfer__field-name">Credit: </span>
+							<span className="transfer__field-value">{client.credit}</span> &#8362;
+						</div>
 					</div>
 				</div>
 			)}
