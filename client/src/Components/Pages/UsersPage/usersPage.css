@@ -28,7 +28,6 @@
   grid-template-areas:
     "passport birthDay"
     "firstName lastName"
-    "id id"
     "cash credit";
   flex-grow: 2;
 }
@@ -50,8 +49,7 @@
 .lastName,
 .birthDay,
 .credit,
-.cash,
-.id {
+.cash {
   background-color: rgb(245, 230, 192);
   border-radius: 4px;
   padding: 16px 0 16px 30px;
@@ -77,9 +75,6 @@
 }
 .cash {
   grid-area: cash;
-}
-.id {
-  grid-area: id;
 }
 .formSubtitles {
   color: rgb(133, 145, 170);
