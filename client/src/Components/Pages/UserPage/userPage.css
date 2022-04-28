@@ -1,95 +1,133 @@
 .user-header {
-    text-align: center;
-    margin: auto;
-    font-family: 'arial';
-    font-size: 4vmin;
-    padding: 20px 0;
-    color:  rgb(23, 65, 103);
+  text-align: center;
+  margin: auto;
+  font-family: "arial";
+  font-size: 4vmin;
+  padding: 20px 0;
+  color: rgb(23, 65, 103);
 }
 .userPage {
-    width: 100%;
-    margin: auto;
+  width: 100%;
+  margin: auto;
 }
 .userOptions {
-   margin: auto;
-    width: 80%;
+  margin: auto;
+  width: 80%;
 }
 .user-header {
-    font-family: Vast Shadow;
-    font-size: 4vmin;
+  font-family: Vast Shadow;
+  font-size: 4vmin;
 }
 .searching-bloc {
-    text-align: center;
-    margin: 4vmin 0;
+  text-align: center;
+  margin: 4vmin 0;
 }
 .searching-bloc input,
 .searching-bloc button {
-    display: inline-block;
-    padding: 30px;
-    font-size: 2vmin;
-    border-radius: 10px;
+  display: inline-block;
+  padding: 30px;
+  font-size: 2vmin;
+  border-radius: 10px;
 }
 .searching-bloc button {
-    border: 3px solid  rgb(23, 65, 103);
-    color: white;
-    background:  rgb(23, 65, 103);
-    margin-left: 40px;
-    font-size: 3vmin;
+  border: 3px solid rgb(23, 65, 103);
+  color: white;
+  background: rgb(23, 65, 103);
+  margin-left: 40px;
+  font-size: 3vmin;
 }
 .searching-bloc input {
-    border: 3px dotted rgb(23, 65, 103);
-    font-size: 3vmin;
-    width: 40%;
-    color:  rgb(23, 65, 103);
-    background-color: rgb(100, 213, 238);
-    cursor: pointer;
+  border: 3px dotted rgb(23, 65, 103);
+  font-size: 3vmin;
+  width: 40%;
+  color: rgb(23, 65, 103);
+  background-color: rgb(100, 213, 238);
+  cursor: pointer;
 }
 .searching-bloc input:hover,
 .searching-bloc input:focus {
-    border: 3px solid rgb(245, 200, 51);
-    outline: 3px solid  rgb(245, 200, 51);
+  border: 3px solid rgb(245, 200, 51);
+  outline: 3px solid rgb(245, 200, 51);
 }
 .userOption {
-    min-height: 8vmin;
-    line-height: 8vmin;
-    border-radius: 10%;
-    width: 20%;
-    border: 3px dotted rgb(245, 200, 51);
-    text-align: center;
-    font-size: 4vmin;
-    font-weight: 600;
+  min-height: 8vmin;
+  line-height: 8vmin;
+  border-radius: 10%;
+  width: 20%;
+  border: 3px dotted rgb(245, 200, 51);
+  text-align: center;
+  font-size: 4vmin;
+  font-weight: 600;
 }
 .userOption .icon {
-    display: block;
-    margin: auto;
-    width: 150px;
-    height: 150px;
-    margin-right: 2vmin;
-    background-repeat: no-repeat;
-    margin: 2vmin auto;
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  margin-right: 2vmin;
+  background-repeat: no-repeat;
+  margin: 2vmin auto;
 }
 .depositIcon {
-    background-image: url('../../../Assets/Images/invoice.png');
+  background-image: url("../../../Assets/Images/invoice.png");
 }
 .withdrawIcon {
-    background-image: url('../../../Assets/Images/thunderbolt.png');
+  background-image: url("../../../Assets/Images/thunderbolt.png");
 }
 .updateNameIcon {
-    background-image: url('../../../Assets/Images/management.png');
+  background-image: url("../../../Assets/Images/management.png");
 }
 .deleteIcon {
-    background-image: url('../../../Assets/Images/scissors.png');
+  background-image: url("../../../Assets/Images/scissors.png");
 }
 .delete {
-    border: 3px dotted red;
-}
-.errorMessage {
-    text-align: center;
-    font-size: 4vmin;
-    color: rgb(100, 213, 238);
-}
-.errorMessage .strong {
-    font-weight: 700;
-    color:rgb(23, 65, 103);
+  border: 3px dotted red;
 }
 
+.client-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 10px;
+  grid-template-areas:
+    "current-passport current-birthDay"
+    "current-name current-name"
+    "current-cash current-credit";
+  flex-grow: 1;
+}
+.current-passport,
+.current-name,
+.current-cash,
+.current-credit,
+.current-birthDay {
+  background-color: rgb(245, 230, 192);
+  border-radius: 4px;
+  padding: 16px;
+  display: inline-block;
+  font-size: 3vmin;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.current-passport {
+  grid-area: current-passport;
+}
+.current-name {
+  grid-area: current-name;
+}
+.current-cash {
+  grid-area: current-cash;
+}
+.current-credit {
+  grid-area: current-credit;
+}
+.current-birthDay {
+  grid-area: current-birthDay;
+}
+
+.searching-bloc input::placeholder {
+  opacity: 0.5;
+  font-size: 2.7vmin;
+  color: white;
+  font-style: italic;
+}

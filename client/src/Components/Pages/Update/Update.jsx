@@ -67,34 +67,34 @@ const Update = () => {
           </div>
 
           <div className="form-field">
-          <label>First Name</label>
-          <input type="text" name="first-name"
-            defaultValue={client.firstName}
-            disabled={isUpd}
-            onChange={onHandlerChange}
-          />
-        </div>
+            <label>First Name</label>
+            <input type="text" name="firstName"
+              defaultValue={client.firstName}
+              disabled={isUpd}
+              onChange={onHandlerChange}
+            />
+          </div>
 
-        <div className="form-field">
-          <label>Last Name</label>
-          <input type="text" name="last-name" 
-            defaultValue={client.lastName}
-            disabled={isUpd}
-            onChange={onHandlerChange}
-          />
-        </div>
+          <div className="form-field">
+            <label>Last Name</label>
+            <input type="text" name="lastName" 
+              defaultValue={client.lastName}
+              disabled={isUpd}
+              onChange={onHandlerChange}
+            />
+          </div>
 
-        <div className="form-field">
-          <label>Credit</label>
-          <input type="text" name="credit"
-            defaultValue={client.credit}
-            disabled={isUpd}
-            onChange={onHandlerChange}
-          />
-        </div>
+          <div className="form-field">
+            <label>Credit</label>
+            <input type="text" name="credit"
+              defaultValue={client.credit}
+              disabled={isUpd}
+              onChange={onHandlerChange}
+            />
+          </div>
 
         <button className="addButton" disabled={isUpd} type="submit">Update</button>
-        </form>
+      </form>
     </div>
   )
 }
