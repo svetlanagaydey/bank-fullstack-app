@@ -2,10 +2,10 @@ import React from 'react';
 import Header from '../../../Components/Header/Header';
 import './userPage.css';
 import { useState, useEffect } from "react";
-import {Link} from 'react-router-dom';
 import myApi from '../../../api/Api';
 import ErrorMessage from '../../ErrorMessage/ErrorMessage';
 import CurrentUser from './CurrentUser';
+import Options from './Options';
 
 const UserPage = () => {
     const [searchingPassport, setSearchingPassport] = useState("");
@@ -31,49 +31,6 @@ const UserPage = () => {
     useEffect(() => {
         inputRef.current.focus();
     },[currentUser]);
-
-    const setUserToLocal = () => {
-      localStorage.setItem('userToDelete', JSON.stringify(currentUser));
-      console.log(currentUser);
-    }
-
-    const printUserInfo = () => {
-      return (
-        <div className="userOptions">
-          <CurrentUser currentUser={currentUser} />
-          <ul className="options-list">
-            <li className="userOption deposit"
-            onClick={ () => setUserToLocal()}>
-              <Link to="/deposit">
-                <span className="icon depositIcon"></span>
-                Deposit
-              </Link>
-            </li>
-                
-            <li className="userOption withdraw" 
-            onClick={ () => setUserToLocal()}>
-              <Link to="/withdraw" state={{ currentUser: {currentUser} }}>
-                <span className="icon withdrawIcon"></span>
-                Withdraw
-              </Link>
-            </li>
-            <li className="userOption updateName">
-              <Link to="/update" state={{ client: currentUser }} >
-                <span className="icon updateNameIcon"></span>
-                Update
-              </Link>
-            </li>
-            <li className="userOption delete"
-            onClick={ () => setUserToLocal()}>
-              <Link to="/delete">
-                <span className="icon deleteIcon"> </span>
-                Delete
-              </Link>
-            </li>
-          </ul>
-        </div>
-        )
-    }
     
     return (
         <div className="container userPage">
@@ -87,7 +44,12 @@ const UserPage = () => {
               />
               <button className="searchButton" type="submit">Find</button>
             </form>
-            {currentUser && printUserInfo()}
+            {currentUser && 
+              (<>
+                <CurrentUser currentUser={currentUser} />
+                <Options currentUser={currentUser}/>
+              </>)
+            }
             {!isUser && <ErrorMessage />}
         </div>
     )
