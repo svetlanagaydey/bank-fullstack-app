@@ -1,15 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Rajdhani", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100vw;
   font-size: 2vmin;
   font-weight: 500;
-  color:  rgb(23, 65, 103);
+  color: rgb(23, 65, 103);
 }
 ul {
   list-style: none;
@@ -17,23 +17,24 @@ ul {
 }
 a {
   text-decoration: none;
-  color:  rgb(23, 65, 103);
+  color: rgb(23, 65, 103);
 }
-h1, h2, h3 {
-  font-family: 'Vast Shadow', cursive;
-  color:  rgb(23, 65, 103);
+h1,
+h2,
+h3 {
+  color: rgb(23, 65, 103);
 }
 h1 {
   font-size: 4vmin;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 .container {
-  max-width: 1600px;
-  min-height: 80vh;
+  max-width: 1400px;
+  min-height: 100vh;
   margin: auto;
   text-align: center;
   background: rgba(249, 248, 248, 0.899);

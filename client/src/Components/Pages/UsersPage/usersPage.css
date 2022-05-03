@@ -11,6 +11,8 @@
   text-align: center;
 }
 .client {
+  width: 80%;
+  margin: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -79,4 +81,27 @@
 .formSubtitles {
   color: rgb(133, 145, 170);
   font-weight: 400;
+}
+
+@media (max-width: 1000px) {
+  .info-block {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1px;
+    grid-template-areas:
+      "passport"
+      "birthDay"
+      "firstName"
+      "lastName"
+      "cash"
+      "credit";
+  }
+
+  .passport,
+  .firstName,
+  .lastName,
+  .birthDay,
+  .credit,
+  .cash {
+    padding: 8px 0 8px 15px;
+  }
 }

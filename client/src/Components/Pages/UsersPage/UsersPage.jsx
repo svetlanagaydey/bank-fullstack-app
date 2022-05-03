@@ -57,7 +57,7 @@ const fetchMoreData = async () => {
         >
           {data.map((user, index) => {
             return (
-              <li className="client" key={index}>
+              <div className="client" key={index}>
                 <span className="client-icon"></span>
                 <div className="info-block">
                   <p className="passport"><span className="formSubtitles">Passport: </span>{user.passport}</p>
@@ -67,7 +67,7 @@ const fetchMoreData = async () => {
                   <p className="credit"><span className="formSubtitles">credit: </span>{user.credit}</p>
                   <p className="cash"><span className="formSubtitles">cash: </span>{user.cash}</p>
                 </div>
-              </li>
+              </div>
             );
           })}
         </InfiniteScroll>
