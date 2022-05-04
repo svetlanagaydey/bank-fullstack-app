@@ -29,7 +29,6 @@
   display: block;
   width: 100px;
   height: 100px;
-  margin-right: 2vmin;
   background-repeat: no-repeat;
   margin: 2vmin;
 }
@@ -51,6 +50,9 @@
 }
 
 @media (max-width: 1000px) {
+  .main-header {
+    font-size: 6vmin;
+  }
   .options-list {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -58,6 +60,23 @@
     width: 100%;
   }
   .option {
+    font-size: 5vmin;
     width: 80%;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .icon1 {
+    background-image: url(../../../Assets/Images/recruitment-mobile.png);
+  }
+  .icon2 {
+    background-image: url(../../../Assets/Images/resume-mobile.png);
+  }
+  .icon3 {
+    background-image: url(../../../Assets/Images/consultation-mobile.png);
+  }
+  .icon4 {
+    background-image: url(../../../Assets/Images/team-mobile.png);
   }
 }

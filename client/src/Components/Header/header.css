@@ -1,22 +1,36 @@
 .header {
-    margin: 0 auto;
-    max-width: 1600px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(242, 242, 242);
-    padding: 70px, 30px;
+  margin: 0 auto;
+  max-width: 1600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(242, 242, 242);
+  padding: 70px, 30px;
 }
 .header-logo {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
+  margin-right: 2vmin;
 }
 .header-logo img {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 .header h2 {
-    font-family: 'arial';
-    font-size: 3vmin;
-    color:  rgb(23, 65, 103);
+  font-size: 3vmin;
+  color: rgb(23, 65, 103);
+}
+
+@media (max-width: 1000px) {
+  .header h2 {
+    font-size: 5vmin;
+  }
+  .header-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .header-logo img {
+    width: 40px;
+    height: 40px;
+  }
 }
