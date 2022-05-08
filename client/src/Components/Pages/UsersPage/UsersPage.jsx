@@ -64,8 +64,8 @@ const fetchMoreData = async () => {
                   <p className="birthDay"><span className="formSubtitles">Birthday: </span>{user.birthDay}</p>
                   <p className="firstName"><span className="formSubtitles">First Name: </span>{user.firstName}</p>
                   <p className="lastName"><span className="formSubtitles">Last Name: </span>{user.lastName}</p>
-                  <p className="credit"><span className="formSubtitles">credit: </span>{user.credit}</p>
-                  <p className="cash"><span className="formSubtitles">cash: </span>{user.cash}</p>
+                  <p className="credit"><span className="formSubtitles">Credit: </span>{user.credit}</p>
+                  <p className="cash"><span className="formSubtitles">Cash: </span>{user.cash}</p>
                 </div>
               </div>
             );

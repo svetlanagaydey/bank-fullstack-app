@@ -3,7 +3,7 @@
   margin: auto;
   font-family: "arial";
   font-size: 4vmin;
-  padding: 20px 0;
+  padding: 1.6vmin 0;
 }
 .clients-list {
   width: 80%;
@@ -20,12 +20,12 @@
   border-radius: 10px;
   background-color: white;
   margin-bottom: 2vmin;
-  padding: 0 50px;
+  padding: 2vmin 5vmin;
 }
 .info-block {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(100px, auto);
+  grid-auto-rows: minmax(50px, auto);
   grid-gap: 10px;
   grid-template-areas:
     "passport birthDay"
@@ -52,11 +52,12 @@
 .birthDay,
 .credit,
 .cash {
+  margin: 1vmin;
   background-color: rgb(245, 230, 192);
   border-radius: 4px;
   padding: 16px 0 16px 30px;
   display: inline-block;
-  font-size: 3vmin;
+  font-size: 2rem;
   line-height: 1;
   font-weight: 600;
 }
@@ -84,9 +85,21 @@
 }
 
 @media (max-width: 1000px) {
+  .users-header {
+    font-size: 5vmin;
+  }
+  .client {
+    width: 65%;
+  }
+  .client-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url(../../../Assets/Images/investor-mobile.png);
+  }
   .info-block {
     grid-template-columns: repeat(1, 1fr);
-    grid-gap: 1px;
+    grid-auto-rows: minmax(32px, auto);
+    grid-gap: 0;
     grid-template-areas:
       "passport"
       "birthDay"
@@ -102,6 +115,7 @@
   .birthDay,
   .credit,
   .cash {
-    padding: 8px 0 8px 15px;
+    padding: 6px 0 6px 10px;
+    font-size: 1rem;
   }
 }
