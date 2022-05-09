@@ -1,8 +1,8 @@
 .add-header {
   text-align: center;
   margin: auto;
-  font-family: "arial";
-  font-size: 4vmin;
+  font-family: "Rajdhani";
+  font-size: 6vmin;
   padding: 20px 0;
   color: rgb(23, 65, 103);
 }
@@ -15,9 +15,7 @@
   padding: 50px;
   border: 1px solid rgb(245, 198, 46);
 }
-.form-field {
-  margin-bottom: 30px;
-}
+
 .form-field > label {
   font-size: 2.5vmin;
   color: rgb(23, 65, 103);
@@ -56,15 +54,53 @@
   height: 40px;
   border: 1px dotted rgb(30, 74, 115);
   border-radius: 10px;
-  font-size: 2vmin;
+  font-size: vmin;
   font-family: "Rajdhani";
   color: rgb(30, 74, 115);
 }
 .date-field {
   width: 50px;
   text-align: center;
-  margin-left: 10px;
+  margin-left: 2vmin;
 }
 .date-field--year {
   width: 80px;
+}
+
+@media (max-width: 1000px) {
+  .form {
+    width: 75%;
+    padding: 6vmin;
+  }
+  .form-field {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vmin;
+  }
+  .form-field > label {
+    font-size: 4.2vmin;
+  }
+  .form-field > input {
+    width: 55%;
+  }
+  .date-inputs {
+    display: inline-block;
+    font-size: 3vmin;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+  .date-inputs input {
+    height: 4vmin;
+    font-size: 3vmin;
+  }
+  .date-field {
+    width: 11vmin;
+  }
+  .date-field--year {
+    width: 11vmin;
+  }
+  .addButton {
+    height: 10vmin;
+    font-size: 4.5vmin;
+  }
 }

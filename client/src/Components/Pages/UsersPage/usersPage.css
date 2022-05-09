@@ -1,8 +1,8 @@
 .users-header {
   text-align: center;
   margin: auto;
-  font-family: "arial";
-  font-size: 4vmin;
+  font-family: "Rajdhani";
+  font-size: 6vmin;
   padding: 1.6vmin 0;
 }
 .clients-list {
@@ -85,9 +85,6 @@
 }
 
 @media (max-width: 1000px) {
-  .users-header {
-    font-size: 5vmin;
-  }
   .client {
     width: 65%;
   }

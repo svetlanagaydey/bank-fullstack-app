@@ -49,7 +49,7 @@ const AddUser = () => {
 
   const printForm = () => {
     return (
-      <div >
+      <div className='add-client'>
       <h2 className="add-header">Add new client</h2>
       <form className="form" onSubmit={setNewClient}>
 
@@ -75,10 +75,10 @@ const AddUser = () => {
         </div>
 
         <div className="form-field">
-          <label>Date of birth: </label>
+          <label>Date of birth</label>
           <div className="date-inputs">
-            <input type="text" pattern="[0-9]*" maxLength="2" size="2" className="date-field" name="day" placeholder='dd' onChange={onDateChange}/> / 
-            <input type="text" pattern="[0-9]*" maxLength="2" className="date-field" name="month" placeholder='mm' onChange={onDateChange}/> / 
+            <input type="text" pattern="[0-9]*" maxLength="2" size="2" className="date-field" name="day" placeholder='dd' onChange={onDateChange}/> /
+            <input type="text" pattern="[0-9]*" maxLength="2" className="date-field" name="month" placeholder='mm' onChange={onDateChange}/> /
             <input type="text" pattern="[0-9]*" maxLength="4" className="date-field date-field--year" name="year" placeholder='yyyy' onChange={onDateChange} />
           </div>
         </div>

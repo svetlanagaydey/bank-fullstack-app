@@ -1,7 +1,7 @@
 .user-header {
   text-align: center;
   margin: auto;
-  font-size: 5vmin;
+  font-size: 6vmin;
   padding: 20px 0;
   color: rgb(23, 65, 103);
 }
@@ -126,9 +126,6 @@
 }
 
 @media (max-width: 1000px) {
-  .user-header {
-    font-size: 7vmin;
-  }
   .searching-bloc {
     text-align: right;
     margin: 0 7vmin 7vmin 7vmin;
