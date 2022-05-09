@@ -1,11 +1,7 @@
 # Fullstack Bank Api
 
----
-
 _It is week-end project of my bootcamp course, CRUD Fullstack application with a nice interface and responsive design for mobile devices as well._
 _<a href="https://calm-dawn-90545.herokuapp.com" target="_blank">To Live Demo</a>_
-
----
 
 <table >
   <tr>
@@ -16,7 +12,7 @@ _<a href="https://calm-dawn-90545.herokuapp.com" target="_blank">To Live Demo</a
   
 </table>
 
-###Used by:
+### Used by:
 
 <li>HTML
 <li>CSS
@@ -25,9 +21,9 @@ _<a href="https://calm-dawn-90545.herokuapp.com" target="_blank">To Live Demo</a
 <li>NodeJs
 <li>MongoDb
 
-###Implemented functions:
+### Implemented functions:
 
-<li>Get all clients, with infinite scroll
+<li>Get all clients, return list with infinite scroll
 <li>Create new client
 <li>Get particular client
 <li>Update particular client
