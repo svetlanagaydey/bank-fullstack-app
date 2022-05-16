@@ -1,8 +1,7 @@
 .transfer-header {
   text-align: center;
   margin: auto;
-  font-family: "arial";
-  font-size: 4vmin;
+  font-size: 6vmin;
   padding: 20px 0;
   color: rgb(23, 65, 103);
 }
@@ -95,10 +94,56 @@ button[disabled] {
 .transer-amount {
   width: 30%;
 }
+.transer-amount input {
+  background-color: rgb(245, 200, 51);
+}
+
 .transer-amount input::placeholder,
 .transfer__client-section input::placeholder {
   font-size: 1rem;
   color: white;
   opacity: 0.7; /* Firefox */
   font-style: italic;
+}
+
+@media (max-width: 1000px) {
+  .transfer__clients-block {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .transfer__client-section {
+    width: 90%;
+    margin: 0 2rem 1rem 2rem;
+    padding: 1rem 0;
+  }
+  .transfer-input input,
+  .transfer-input button {
+    font-size: 4vmin;
+  }
+  .transer-amount {
+    width: 100%;
+  }
+  .transfer-input label {
+    font-size: 5vmin;
+    padding: 0 0 0.5rem 1rem;
+  }
+  .transfer-input input {
+    width: 60%;
+  }
+  .transer-amount {
+    width: 70%;
+  }
+  .transer-amount input {
+    width: 38%;
+  }
+  .transfer__field-name {
+    font-size: 4vmin;
+  }
+  .transfer__field-value {
+    font-size: 4vmin;
+  }
+  .transfer__client-field .transfer__ballance {
+    font-size: 6vmin;
+  }
 }
